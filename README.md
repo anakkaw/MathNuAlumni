@@ -42,6 +42,7 @@ python3 app.py
 2. เลือก repository `anakkaw/MathNuAlumni`
 3. Render จะอ่าน `render.yaml` และสร้าง web service ให้
 4. รอ deploy เสร็จ แล้วเปิด URL ที่ Render ให้มา (รูปแบบ `https://<service>.onrender.com`)
+5. ถ้าคิว deploy ค้างนานผิดปกติ ให้กด `Manual Deploy` -> `Deploy latest commit` อีกครั้ง
 
 Environment สำคัญ:
 - `ALUMNI_SECRET` ต้องมีค่า (Blueprint จะ generate ให้อัตโนมัติ)

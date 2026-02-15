@@ -36,7 +36,7 @@ python3 app.py
 
 ## Deploy ขึ้นเว็บสาธารณะ (Render)
 
-โปรเจกต์นี้เตรียมไฟล์ `render.yaml` ไว้แล้ว สามารถ deploy จาก GitHub ได้ทันที
+โปรเจกต์นี้เตรียมไฟล์ `render.yaml` ไว้แล้ว (กำหนด `plan: free`) สามารถ deploy จาก GitHub ได้ทันที
 
 1. เข้า [Render Dashboard](https://dashboard.render.com/) และเลือก `New +` -> `Blueprint`
 2. เลือก repository `anakkaw/MathNuAlumni`

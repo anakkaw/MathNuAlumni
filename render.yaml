@@ -1,6 +1,7 @@
 services:
   - type: web
     name: mathnu-alumni
+    plan: free
     runtime: python
     startCommand: python app.py
     envVars:

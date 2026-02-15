@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: mathnu-alumni
+    runtime: python
+    startCommand: python app.py
+    envVars:
+      - key: ALUMNI_SECRET
+        generateValue: true
+      - key: HOT_RELOAD
+        value: "0"

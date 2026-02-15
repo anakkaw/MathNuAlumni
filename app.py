@@ -22,8 +22,8 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urlparse
 
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = os.environ.get("HOST", "0.0.0.0").strip() or "0.0.0.0"
+PORT = int(os.environ.get("PORT", "8000") or "8000")
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "alumni.db"

@@ -34,6 +34,24 @@ python3 app.py
 
 `http://127.0.0.1:8000`
 
+## Deploy ขึ้นเว็บสาธารณะ (Render)
+
+โปรเจกต์นี้เตรียมไฟล์ `render.yaml` ไว้แล้ว สามารถ deploy จาก GitHub ได้ทันที
+
+1. เข้า [Render Dashboard](https://dashboard.render.com/) และเลือก `New +` -> `Blueprint`
+2. เลือก repository `anakkaw/MathNuAlumni`
+3. Render จะอ่าน `render.yaml` และสร้าง web service ให้
+4. รอ deploy เสร็จ แล้วเปิด URL ที่ Render ให้มา (รูปแบบ `https://<service>.onrender.com`)
+
+Environment สำคัญ:
+- `ALUMNI_SECRET` ต้องมีค่า (Blueprint จะ generate ให้อัตโนมัติ)
+- `HOT_RELOAD=0` สำหรับ production
+- ถ้าจะใช้ส่งอีเมล reset password ให้ตั้งเพิ่ม: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `SMTP_USE_TLS`
+
+หมายเหตุเรื่องข้อมูล:
+- ระบบใช้ SQLite (`data/alumni.db`) ถ้า platform ไม่การันตี persistent storage ข้อมูลอาจหายเมื่อ instance ถูกสร้างใหม่
+- ถ้าต้องการใช้งานจริงระยะยาว ควรย้ายไปฐานข้อมูลภายนอก (เช่น PostgreSQL)
+
 ## ฐานรหัสไปรษณีย์ทั้งประเทศ
 
 ระบบรองรับการโหลดฐานรหัสไปรษณีย์จากไฟล์ภายนอกอัตโนมัติ (แนะนำให้ใช้ข้อมูลทั้งประเทศ):
